@@ -1,9 +1,9 @@
-import React from "react";
-import { Heading, Slide, List, ListItem, Code } from "spectacle";
+import React from 'react';
+import { Heading, Slide, List, ListItem, Code } from 'spectacle';
 
 export default (
   <Slide
-    transition={["slide"]}
+    transition={['slide']}
     bgColor="secondary"
     align="flex-start flex-start"
   >
@@ -13,8 +13,8 @@ export default (
     <List textColor="white">
       <ListItem>All client side data exists in one store.</ListItem>
       <ListItem>
-        No need to fetch data with{" "}
-        <Code textColor="#ffc107">componentDidMount</Code>
+        No need to fetch data with{' '}
+        <Code textColor="#ffc107">componentDidMount</Code> (but you still can)
       </ListItem>
       <ListItem>
         Components only need to receive/present data and dispatch what happened

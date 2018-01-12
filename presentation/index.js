@@ -1,5 +1,5 @@
 // Import React
-import React from "react";
+import React from 'react';
 
 // Import Spectacle Core tags
 import {
@@ -14,40 +14,40 @@ import {
   Text,
   CodePane,
   Image
-} from "spectacle";
+} from 'spectacle';
 
 // Import theme
-import createTheme from "spectacle/lib/themes/default";
+import createTheme from 'spectacle/lib/themes/default';
 
 // Require CSS
-require("normalize.css");
+require('normalize.css');
 
 const theme = createTheme(
   {
-    primary: "white",
-    secondary: "#15141f",
-    tertiary: "#4b35ef",
-    quarternary: "#CECECE"
+    primary: 'white',
+    secondary: '#15141f',
+    tertiary: '#4b35ef',
+    quarternary: '#CECECE'
   },
   {
-    primary: "Helvetica",
-    secondary: "Helvetica"
+    primary: 'Helvetica',
+    secondary: 'Helvetica'
   }
 );
 
 const slidesImports = [
-  import("./slides/title"),
-  import("./slides/storeSetup"),
-  import("./slides/routesSetup"),
-  import("./slides/actionsDispatched"),
-  import("./slides/linkCreation"),
-  import("./slides/linkBenefit"),
-  import("./slides/twoWayData"),
-  import("./slides/oneWayData"),
-  import("./slides/thunks"),
-  import("./slides/dataFetchingOverview"),
-  import("./slides/disadvantages"),
-  import("./slides/advantages")
+  import('./slides/title'),
+  import('./slides/twoWayData'),
+  import('./slides/oneWayData'),
+  import('./slides/dataFetchingOverview'),
+  import('./slides/storeSetup'),
+  import('./slides/routesSetup'),
+  import('./slides/actionsDispatched'),
+  import('./slides/linkCreation'),
+  import('./slides/linkBenefit'),
+  import('./slides/thunks'),
+  import('./slides/disadvantages'),
+  import('./slides/advantages')
 ];
 
 export default class Presentation extends React.Component {
@@ -59,8 +59,8 @@ export default class Presentation extends React.Component {
   }
   componentDidMount() {
     const importedSlides = [];
-    Promise.all(slidesImports).then((slidesImportsResolved) => {
-      slidesImportsResolved.forEach((slide) => {
+    Promise.all(slidesImports).then(slidesImportsResolved => {
+      slidesImportsResolved.forEach(slide => {
         importedSlides.push(slide.default);
       });
       this.setState({ slides: importedSlides });
@@ -70,7 +70,7 @@ export default class Presentation extends React.Component {
     const { slides } = this.state;
     return (
       <Deck
-        transition={["slide"]}
+        transition={['slide']}
         transitionDuration={500}
         theme={theme}
         progress="number"
